@@ -67,9 +67,10 @@ def create_feed_checker(feed_url):
         last_id_from_db = db.get_link(feed_url).link
 
         if last_id_from_db == "*":
-            message = f"**{first_entry.title}**\n```{first_entry.link}```"
+            message = f"/qbleech ```{first_entry.link}```"
             try:
                 app.send_message(log_channel, message)
+                sleep(7)
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {first_entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
@@ -94,7 +95,7 @@ def create_feed_checker(feed_url):
             message = f"**/qbleech ```{entry.link}```"
             try:
                 app.send_message(log_channel, message)
-                sleep(10)
+                sleep(7)
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
