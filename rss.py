@@ -70,7 +70,7 @@ def create_feed_checker(feed_url):
             message = f"/qbleech ```{first_entry.link}```"
             try:
                 app.send_message(log_channel, message)
-                sleep(7)
+                sleep(20)
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {first_entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
@@ -95,7 +95,7 @@ def create_feed_checker(feed_url):
             message = f"**/qbleech ```{entry.link}```"
             try:
                 app.send_message(log_channel, message)
-                sleep(7)
+                sleep(20)
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
