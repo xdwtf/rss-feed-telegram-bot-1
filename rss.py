@@ -62,10 +62,10 @@ def create_feed_checker(feed_url):
         if last_id_from_db == "*":
             message = f"/qbleech ```{first_entry.link}```"
             try:
-                if "720p.HEVC" in link or "GalaXXXy" in entry.link:
+                if "720p.HEVC" in link or "GalaXXXy" in first_entry.link:
                     app.send_message(log_channel, message)
                 else:
-                    print(f"{entry.link}: >>>>>>skipped<<<<<<")
+                    print(f"{first_entry.link}: >>>>>>skipped<<<<<<")
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {first_entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
