@@ -62,7 +62,7 @@ def create_feed_checker(feed_url):
         if last_id_from_db == "*":
             message = f"/qbleech ```{first_entry.link}```"
             try:
-                if "720p.HEVC" in link or "GalaXXXy" in first_entry.link:
+                if "720p.HEVC" in first_entry.link or "GalaXXXy" in first_entry.link:
                     app.send_message(log_channel, message)
                 else:
                     print(f"{first_entry.link}: >>>>>>skipped<<<<<<")
@@ -89,7 +89,7 @@ def create_feed_checker(feed_url):
             # ↓ Edit this message as your needs.
             message = f"**/qbleech ```{entry.link}```"
             try: 
-                if "hevc" in link or "x265" in entry.link:
+                if "hevc" in entry.link or "x265" in entry.link:
                     app.send_message(log_channel, message)
                 else:
                     print(f"{entry.link}: >>>>>>skipped<<<<<<")
