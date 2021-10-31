@@ -65,7 +65,7 @@ def create_feed_checker(feed_url):
                 if "720p.HEVC" in link or "GalaXXXy" in link:
                 app.send_message(log_channel, message)
                 else:
-                _LOG.info(f"{entry.link}: >>>>>>skip<<<<<<")
+                print(f"{entry.link}: >>>>>>skip<<<<<<")
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {first_entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
@@ -92,7 +92,7 @@ def create_feed_checker(feed_url):
                 if "hevc" in link or "x265" in link:
                 app.send_message(log_channel, message)
                 else:
-                _LOG.info(f"{link}: >>>>>>skip<<<<<<")
+                print(f"{link}: >>>>>>skip<<<<<<")
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
