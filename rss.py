@@ -1,6 +1,7 @@
 import os
 import sys
 import feedparser
+import asyncio
 from sql import db
 from time import sleep
 from pyrogram import Client, filters
@@ -69,6 +70,7 @@ def create_feed_checker(feed_url):
         if last_id_from_db == "*":
             message = f"/qbleech ```{first_entry.link}```"
             try:
+                await asyncio.sleep(20)
                 app.send_message(log_channel, message)
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {first_entry.link}"
@@ -93,6 +95,7 @@ def create_feed_checker(feed_url):
             # ↓ Edit this message as your needs.
             message = f"**/qbleech ```{entry.link}```"
             try:
+                await asyncio.sleep(20)
                 app.send_message(log_channel, message)
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {entry.link}"
