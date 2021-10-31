@@ -63,7 +63,7 @@ def create_feed_checker(feed_url):
             message = f"/qbleech ```{first_entry.link}```"
             try:
                 if "720p.HEVC" in link or "GalaXXXy" in link:
-                app.send_message(log_channel, message)
+                    app.send_message(log_channel, message)
                 else:
                 print(f"{entry.link}: >>>>>>skip<<<<<<")
                 if app2 is not None:
@@ -90,7 +90,7 @@ def create_feed_checker(feed_url):
             message = f"**/qbleech ```{entry.link}```"
             try: 
                 if "hevc" in link or "x265" in link:
-                app.send_message(log_channel, message)
+                    app.send_message(log_channel, message)
                 else:
                 print(f"{link}: >>>>>>skip<<<<<<")
                 if app2 is not None:
