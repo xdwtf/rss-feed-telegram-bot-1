@@ -92,7 +92,7 @@ def create_feed_checker(feed_url):
                 if "hevc" in link or "x265" in entry.link:
                     app.send_message(log_channel, message)
                 else:
-                    print(f"{link}: >>>>>>skipped<<<<<<")
+                    print(f"{entry.link}: >>>>>>skipped<<<<<<")
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
