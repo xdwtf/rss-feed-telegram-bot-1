@@ -67,7 +67,7 @@ def create_feed_checker(feed_url):
         last_id_from_db = db.get_link(feed_url).link
 
         if last_id_from_db == "*":
-            message = f"**{first_entry.title}**\n```{first_entry.link}```"
+            message = f"/qbleech ```{first_entry.link}```"
             try:
                 if "720p" in first_entry.link or "Complete" in first_entry.link or "GalaxyRG" in first_entry.link or "GalaXXXy" in first_entry.link or "GalaxyTV" in first_entry.link:
                     app.send_message(log_channel, message)
@@ -94,7 +94,7 @@ def create_feed_checker(feed_url):
                 break
 
             # ↓ Edit this message as your needs.
-            message = f"**{entry.title}**\n```{entry.link}```"
+            message = f"/qbleech ```{entry.link}```"
             try:
                 if "720p" in entry.link or "Complete" in entry.link or "X265" in entry.link or "GalaxyRG" in entry.link or "GalaXXXy" in entry.link or "GalaxyTV" in entry.link:
                     app.send_message(log_channel, message)
