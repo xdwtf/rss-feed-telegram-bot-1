@@ -1,6 +1,6 @@
 # RSS Feed Telegram Bot
 A bot to post messages to Telegram Groups or Channels from rss feed.
-- This bot can also send /mirror commands to your mirror bot using your telefdsfdsfgram account.
+- This bot can also send /mirror comasdfdsfdsfsamands to your mirror bot using your telefdsfdsfgram account.
 bcoz bot can't read another bot's mag. So this bot will use your TG account to interact with mirror bot.
 Fill `STR_SESSION` and `MIRROR_CHAT_ID` vars to enable it.
 
