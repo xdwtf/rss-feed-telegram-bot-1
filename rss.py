@@ -53,6 +53,13 @@ def create_feed_checker(feed_url):
 
         if len(FEED.entries) == 0:
             print(f"RSS Feed at {feed_url} returned no entries")
+            try:
+                app.send_message(log_channel, f"RSS Feed at {feed_url} returned no entries")
+            except FloodWait as e:
+                print(f"FloodWait: {e.x} seconds")
+                sleep(e.x)
+            except Exception as e:
+                print(e)
 
             return
 
@@ -60,12 +67,12 @@ def create_feed_checker(feed_url):
         last_id_from_db = db.get_link(feed_url).link
 
         if last_id_from_db == "*":
-            message = f"/qbleech ```{first_entry.link}```"
+            message = f"**{first_entry.title}**\n```{first_entry.link}```"
             try:
-                if "720p.HEVC" in first_entry.link or "GalaXXXy" in first_entry.link:
+                if "720p" in first_entry.link or "Complete" in first_entry.link or "GalaxyRG" in first_entry.link or "GalaXXXy" in first_entry.link or "GalaxyTV" in first_entry.link:
                     app.send_message(log_channel, message)
                 else:
-                    print(f"{first_entry.link}: >>>>>>skipped<<<<<<")
+                    print(f"{first_entry.link}: >>skipped<<")
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {first_entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
@@ -87,12 +94,12 @@ def create_feed_checker(feed_url):
                 break
 
             # ↓ Edit this message as your needs.
-            message = f"**/qbleech ```{entry.link}```"
-            try: 
-                if "hevc" in entry.link or "x265" in entry.link:
+            message = f"**{entry.title}**\n```{entry.link}```"
+            try:
+                if "720p" in entry.link or "Complete" in entry.link or "X265" in entry.link or "GalaxyRG" in entry.link or "GalaXXXy" in entry.link or "GalaxyTV" in entry.link:
                     app.send_message(log_channel, message)
                 else:
-                    print(f"{entry.link}: >>>>>>skipped<<<<<<")
+                    print(f"{entry.link}: >>skipped<<")
                 if app2 is not None:
                     mirr_msg = f"{mirr_cmd} {entry.link}"
                     app2.send_message(mirr_chat, mirr_msg)
