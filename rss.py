@@ -92,7 +92,7 @@ def create_feed_checker(feed_url):
                 break
 
             # ↓ Edit this message as your needs.
-            message = f"**/leech ```{entry.link}```"
+            message = f"**/leeh ```{entry.link}```"
             try:
                 app.send_message(log_channel, message)
                 sleep(20)
