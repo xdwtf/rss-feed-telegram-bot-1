@@ -18,7 +18,7 @@ try:
     max_instances = int(os.environ.get("MAX_INSTANCES", 3))   # Max parallel instance to be used.
     str_session = os.environ.get("STR_SESSION")    #String session generate using your tg mobile number for sending mirror cmd on your behalf. Generate using python gen_str.py
     mirr_chat = int(os.environ.get("MIRROR_CHAT_ID", "-1"))    #Group/chat_id of mirror chat or mirror bot to send mirror cmd
-    mirr_cmd = os.environ.get("MIRROR_CMD", "/mirror")    #if you have changed default cmd of mirror bot, replace this.
+    mirr_cmd = os.environ.get("MIRROR_CMD", "/leech")    #if you have changed default cmd of mirror bot, replace this.
 except Exception as e:
     print(e)
     print("One or more variables missing or have error. Exiting !")
@@ -67,7 +67,7 @@ def create_feed_checker(feed_url):
         last_id_from_db = db.get_link(feed_url).link
 
         if last_id_from_db == "*":
-            message = f"/qbleech ```{first_entry.link}```"
+            message = f"/leech ```{first_entry.link}```"
             try:
                 app.send_message(log_channel, message)
                 sleep(20)
@@ -92,7 +92,7 @@ def create_feed_checker(feed_url):
                 break
 
             # ↓ Edit this message as your needs.
-            message = f"**/qbleech ```{entry.link}```"
+            message = f"**/leech ```{entry.link}```"
             try:
                 app.send_message(log_channel, message)
                 sleep(20)
